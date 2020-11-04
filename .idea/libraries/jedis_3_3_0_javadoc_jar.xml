@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jedis-3.3.0-javadoc.jar">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/jedis-3.3.0-javadoc.jar.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

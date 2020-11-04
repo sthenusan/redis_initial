@@ -3,6 +3,11 @@ import redis.clients.jedis.Jedis;
 public class test {
 
         private static Jedis jedis;
+        private static int index = 0;
+
+        public void setindex(int ind){
+            this.index=ind;
+        }
 
         private static Jedis database() {
 
@@ -12,9 +17,9 @@ public class test {
             return new Jedis("127.0.0.1", 6379);
         }
 
-        public void addValue(int index,String key, String value) {
+        public void addValue(String key, String value) {
             try {
-                System.out.println("Connecting to JEDIS ... ");
+                System.out.println("Connecting to REDIS to add new key-val pair ");
                 database().select(index);
                 database().set(key, value);
 
@@ -23,9 +28,9 @@ public class test {
             }
         }
 
-        public void getValue(int index, String key){
+        public void getValue(String key){
             try {
-                System.out.println("Connecting to JEDIS ... ");
+                System.out.println("Connecting to REDIS to get value for a key ");
                 database().select(index);
                 String val= database().get(key);
                 System.out.println(val);
@@ -47,8 +52,9 @@ public class test {
     public static void main(String ars[]){
         System.out.println(database().ping());
         test ch= new test();
-        ch.addValue(2,"thenusan","checking_entry");
-        ch.getValue(2,"thenusan");
+        ch.setindex(3);
+        ch.addValue("thenu","checking");
+        ch.getValue("thenu");
     }
 }
 

@@ -1,6 +1,6 @@
 import redis.clients.jedis.Jedis;
 
-public class test {
+public class testSample {
 
         private static Jedis jedis;
         private static int index = 0;
